@@ -7,4 +7,9 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-console.log('Hello World from Webpacker')
+import { App } from "rise";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+
+const container = document.getElementById("react-app");
+ReactDOM.render(<App />, container);

@@ -36,6 +36,10 @@
     "webpack-merge": "^4.1.0"
   },
   "devDependencies": {
+    "@storybook/react": "^3.2.5",
     "webpack-dev-server": "^2.7.1"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 9001 -c ./config/storybook"
   }
 }

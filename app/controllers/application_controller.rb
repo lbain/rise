@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  # protect_from_forgery with: :exception # todo - figure out how to deal with the CSRF tokens 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected

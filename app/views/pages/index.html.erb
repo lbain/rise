@@ -19,7 +19,7 @@ window.fbAsyncInit = function() {
 </script>      
      
 <div class="fb-messenger-checkbox"  
- origin="http://localhost:5000"
+ origin="<%= @request.base_url %>"
  page_id="<%= Figaro.env.facebook_page_id %>"
  messenger_app_id="<%= Figaro.env.facebook_app_id %>"
  user_ref="<%= rand(100..100000) %>" 

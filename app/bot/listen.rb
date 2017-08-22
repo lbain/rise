@@ -11,3 +11,10 @@ Bot.on :message do |message|
       }, access_token: Figaro.env.facebook_page_access_token)
 end
 
+Bot.on :optin do |optin|
+    puts optin.sender
+    puts optin.recipient
+    puts optin.sent_at
+    puts optin.ref
+end
+

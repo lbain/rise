@@ -16,16 +16,27 @@ window.fbAsyncInit = function() {
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk')
  );
+
+ function confirmOptIn() {
+  FB.AppEvents.logEvent('MessengerCheckboxUserConfirmation', null, {
+    'app_id':'<%= Figaro.env.facebook_app_id %>',
+    'page_id':'<%= Figaro.env.facebook_page_id %>',
+    'ref':'PASS_THROUGH_PARAM',
+    'user_ref':'<%= @uniq_user_ref %>'
+  });
+}
 </script>      
      
 <div class="fb-messenger-checkbox"  
  origin="<%= @request.base_url %>"
  page_id="<%= Figaro.env.facebook_page_id %>"
  messenger_app_id="<%= Figaro.env.facebook_app_id %>"
- user_ref="<%= rand(100..100000) %>" 
+ user_ref="<%= @uniq_user_ref %>" 
  prechecked="true" 
  allow_login="true" 
  size="large"></div>
+
+ <input type="button" onclick="confirmOptIn()" value="Confirm Opt-in"/>
 
 <h1>Pages#index</h1>
 

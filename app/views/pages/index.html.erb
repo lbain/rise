@@ -1,2 +1,30 @@
+<script>
+window.fbAsyncInit = function() {
+   FB.init({
+     appId      : '<%= Figaro.env.facebook_app_id %>',
+     xfbml      : true,
+     version    : 'v2.6'
+   });
+
+ };
+
+ (function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk')
+ );
+</script>      
+     
+<div class="fb-messenger-checkbox"  
+ origin="http://localhost:5000"
+ page_id="<%= Figaro.env.facebook_page_id %>"
+ messenger_app_id="<%= Figaro.env.facebook_app_id %>"
+ user_ref="<%= rand(100..100000) %>" 
+ prechecked="true" 
+ allow_login="true" 
+ size="large"></div>
+
 <h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>

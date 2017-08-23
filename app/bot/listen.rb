@@ -12,9 +12,8 @@ Bot.on :message do |message|
 end
 
 Bot.on :optin do |optin|
-    puts optin.sender
-    puts optin.recipient
-    puts optin.sent_at
-    puts optin.ref
+    puts "#optin > #{optin.inspect}"
+
+    # optin.reply(text: "Hello #{optin.sender}") # this is broken becuase there is no sender
 end
 
